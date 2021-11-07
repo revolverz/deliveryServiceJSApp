@@ -27,6 +27,7 @@ const logout = () => {
     userName.textContent = '';
 
     localStorage.removeItem('user')
+    window.location.href = '/';
 }
 
 buttonOut.addEventListener('click', () => {
@@ -62,4 +63,8 @@ logInForm.addEventListener('submit', (event) => {
 
 if ( localStorage.getItem('user') ) {
     login(JSON.parse(localStorage.getItem('user')));
+}
+
+export function auth() {
+    modalAuth.style.display = 'flex';
 }
